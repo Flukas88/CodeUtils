@@ -7,7 +7,6 @@
 import random
 import string
 
-
 def keyGen(uname, pwd):
     key = random.choice(string.lowercase)
     key += uname[1:4]
@@ -22,4 +21,5 @@ def keyGen(uname, pwd):
 
 
 if __name__ == '__main__':
-    print keyGen('prova', 'provami')
+    print keyGen('luca', 'luca')
+    print keyGen('marco', 'marco')
