@@ -1,0 +1,32 @@
+export HISTTIMEFORMAT="%F %T "
+export EDITOR="vim"
+
+# this is a debian-based function
+
+function sys_maint {
+  case $1 in
+      *install*) shift; sudo apt-get install $@ ;;
+      *update*) sudo apt-get update && sudo apt-get upgrade ;;
+      *search*) shift; apt-cache search $@ ;;
+      *remove*) shift; sudo apt-get remove $@ ;;
+      *clean*)  sudo bleachbit ;;
+      *) echo "sys_maint:Usage: install|update|clean|search|remove" ;;
+  esac
+}
+
+# Valid for all distros
+
+function arch_util {
+  case $1 in
+      compress) shift; tar czvf "$1.tar.gz" "$1"; ;;
+      decompress) shift; tar xzvf $1 ;;
+      *list*) shift; tar tzvf $1 ;;
+      *) echo "arch_util:Usage: compress <file> | decompress <file> | list <file>" ;;
+  esac
+}
+
+# Usefull for debugging issue
+
+function time_ping {
+ ping $1 | while read pong; do echo “$(date): $pong”; done
+}
