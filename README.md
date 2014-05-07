@@ -1,7 +1,4 @@
 CodeUtils
 =========
 
-Sysadmin tools
-
-
-Personal bits of code
+Personal bits of code in different langs (C,Java,Bash,Ruby...)
