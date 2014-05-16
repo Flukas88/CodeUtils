@@ -2,7 +2,6 @@
 import MySQLdb
 import json
 import cgi
-import cgitb
 
 host = "xxxx"
 uname = "xxxx"
@@ -15,7 +14,7 @@ cmd = "select * from Notes where text like '%"
 cmd += form.getvalue('text')
 cmd += "%';"
 
-content = {}
+content={}
 
 try:
    cur.execute(cmd)
