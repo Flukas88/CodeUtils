@@ -14,7 +14,7 @@ cmd = "select * from Notes where text like '%"
 cmd += form.getvalue('text')
 cmd += "%';"
 
-content={}
+content = {}
 
 try:
    cur.execute(cmd)
