@@ -9,6 +9,5 @@ import javax.management.remote.JMXServiceURL as JmxUrl
          def serverInfo    = new GroovyMBean(server, mbeanString).getProperty(versionAttributeName)
          return "$serverInfo"
       }
-      catch(javax.management.InstanceNotFoundException e) { }
-      catch(java.io.IOException e) { }
+      catch(Exception e) { }
   }
