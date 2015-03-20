@@ -6,8 +6,8 @@ PGNAME=`basename $0`
 STEP=10000
 PORT=$1
 DB=$2
+HOST=$3
 EXEC="/export/local/redis/bin/redis-cli"
-HOST="localhost"
 
 if [[ $# -ne 3 ]]; then
     echo "usage: $PGNAME HOST PORT DB_NUMBER"
