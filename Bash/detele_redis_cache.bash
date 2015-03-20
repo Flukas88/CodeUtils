@@ -7,6 +7,7 @@ STEP=10000
 PORT=$1
 DB=$2
 EXEC="/export/local/redis/bin/redis-cli"
+HOST="localhost"
 
 if [[ $# -ne 3 ]]; then
     echo "usage: $PGNAME PORT DB_NUMBER"
@@ -15,11 +16,11 @@ fi
 
 while :
 do
-    $EXEC -p "$PORT" -n "$DB" scan "$CUR" COUNT "$STEP" > keybatch.txt
+    $EXEC -p "$PORT" -h "$HOST" -n "$DB" scan "$CUR" COUNT "$STEP" > keybatch.txt
     CUR=$(head -1 keybatch.txt)
     echo "CUR at $CUR"
     sed 's/^/del /' keybatch.txt > del.txt
-    $EXEC -p "$PORT" -n "$DBN" < del.txt | wc  -l
+    $EXEC -p "$PORT" -h "$HOST" -n "$DBN" < del.txt | wc  -l
     sleep 1
     if [[ $CUR -eq 0 ]]; then
         exit 0;
