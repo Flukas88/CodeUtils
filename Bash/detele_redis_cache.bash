@@ -10,7 +10,7 @@ EXEC="/export/local/redis/bin/redis-cli"
 HOST="localhost"
 
 if [[ $# -ne 3 ]]; then
-    echo "usage: $PGNAME PORT DB_NUMBER"
+    echo "usage: $PGNAME HOST PORT DB_NUMBER"
     exit 55
 fi
 
