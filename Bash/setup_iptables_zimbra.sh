@@ -5,6 +5,7 @@ iptables -I INPUT -p tcp --dport 25 -j ACCEPT #SMTP
 iptables -I INPUT -p tcp --dport 443 -j ACCEPT #HTTPS
 iptables -I INPUT -p tcp --dport 3930 -j ACCEPT
 iptables -I INPUT -p tcp --dport 143 -j ACCEPT #IMAP
+iptables -I INPUT -p udp --dport 161 -j ACCEPT #SNMP
 iptables -I INPUT -p tcp --dport 993 -j ACCEPT #IMAPS
 iptables -I INPUT -p tcp --dport 389 -j ACCEPT #LDAP
 iptables -I INPUT -p tcp --dport 7025 -j ACCEPT
