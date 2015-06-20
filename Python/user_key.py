@@ -11,7 +11,7 @@ import binascii
 def keyGen(uname, pwd):
     """Generate a password"""
     key = random.choice(string.lowercase)
-    key += uname[1:random.randrange(1, 4)]
+    key += uname[random.randrange(1, 4):random.randrange(1, 4)]
     key += pwd[2:4] + random.choice(string.uppercase)
     key += binascii.b2a_hex(os.urandom(4)) 
     key += random.choice(string.lowercase)
