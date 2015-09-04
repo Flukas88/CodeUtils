@@ -1,0 +1,5 @@
+#!/bin/bash
+
+SCRIPT_NAME=`basename $0`
+
+for x in `ls | grep -v $SCRIPT_NAME`; do cd $x && git pull && cd ..; done
