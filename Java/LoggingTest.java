@@ -23,8 +23,8 @@ class TestClass {
 
     public static void test() {
         testClassLogger.log(Level.INFO, "TestClass::test started");
-        testClassLogger.log(Level.SEVERE, "estClass::test continued");
-        testClassLogger.log(Level.INFO, "estClass::test ended");
+        testClassLogger.log(Level.SEVERE, "TestClass::test continued");
+        testClassLogger.log(Level.INFO, "TestClass::test ended");
     }
  
 }
