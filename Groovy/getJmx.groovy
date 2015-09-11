@@ -9,5 +9,8 @@ import javax.management.remote.JMXServiceURL as JmxUrl
          def serverInfo    = new GroovyMBean(server, mbeanString).getProperty(versionAttributeName)
          return "$serverInfo"
       }
-      catch(Exception e) { }
+      catch(Exception e) {
+         // ignore exceptions.
+       
+      }
   }
