@@ -1,0 +1,5 @@
+#!/bin/bash
+
+SCRIPT_NAME=`basename $0`
+
+for repo in `ls | grep -v $SCRIPT_NAME`; do cd $repo && git pull && cd ..; done
